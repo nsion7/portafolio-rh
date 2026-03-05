@@ -1,5 +1,7 @@
 # Portafolio de Recursos Humanos: The Architectural Ledger 🏛️
 
+🌐 **[Ver el Portafolio Diferenciador en Acción](https://nsion7.github.io/portafolio-rh)**
+
 Un glosario interactivo y animado de conceptos de Recursos Humanos, diseñado con una cuidada estética **Pixel Art de 16 bits**. En lugar de aburridas tarjetas, esta aplicación transforma el aprendizaje en una experiencia interactiva donde exploras una "ciudad" de 6 misteriosos edificios o facultades, cada uno representando una rama diferente de la administración y los RRHH.
 
 ![Preview Placeholder](https://via.placeholder.com/800x400.png?text=The+Architectural+Ledger)

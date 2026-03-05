@@ -6,14 +6,10 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
   color: #fff;
   font-family: 'VT323', monospace;
   image-rendering: pixelated;
   transition: background-color 1s ease;
-  overflow: hidden;
-  /* Avoid body scroll, inner scroll inside Building */
 }
 
 html[data-theme="day"] body {
