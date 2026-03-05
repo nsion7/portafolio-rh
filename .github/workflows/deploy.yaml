@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # Solo se activa cuando subes a main
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -16,4 +16,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install, build, and upload
-        uses: withastro/action@v3 # Esta acción oficial de Astro hace todo el trabajo
+        uses: withastro/action@v3 # Esta acción ignora Jekyll automáticamente
