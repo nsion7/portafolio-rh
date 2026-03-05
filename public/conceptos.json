@@ -1,0 +1,427 @@
+[
+    {
+        "clase": 1,
+        "termino": "Administración",
+        "definicion": "Coordinación de recursos para lograr objetivos con eficiencia y eficacia dentro de una organización."
+    },
+    {
+        "clase": 1,
+        "termino": "Proceso Administrativo",
+        "definicion": "Conjunto de fases cíclicas (Planeación, Organización, Dirección y Control) para el logro de metas institucionales."
+    },
+    {
+        "clase": 1,
+        "termino": "Planeación",
+        "definicion": "Fase del proceso administrativo que determina qué se quiere hacer: objetivos, políticas, procedimientos y programas."
+    },
+    {
+        "clase": 1,
+        "termino": "Organización",
+        "definicion": "Fase del proceso administrativo que establece cómo se va a hacer: división del trabajo, jerarquías y delegación."
+    },
+    {
+        "clase": 1,
+        "termino": "Dirección",
+        "definicion": "Fase del proceso administrativo que se encarga de ver que se haga: ejecución, comunicación, liderazgo y motivación."
+    },
+    {
+        "clase": 1,
+        "termino": "Control",
+        "definicion": "Fase del proceso administrativo que evalúa cómo se realizó: medición de resultados y corrección de desviaciones."
+    },
+    {
+        "clase": 1,
+        "termino": "Áreas Funcionales",
+        "definicion": "Divisiones especializadas de una empresa como Finanzas, Mercadotecnia, Producción, Sistemas y Recursos Humanos."
+    },
+    {
+        "clase": 1,
+        "termino": "Recursos Humanos",
+        "definicion": "Enfoque tradicional centrado en la gestión administrativa, operativa y funcional del personal de la organización."
+    },
+    {
+        "clase": 1,
+        "termino": "Talento Humano",
+        "definicion": "Enfoque moderno que valora las capacidades, habilidades y el potencial creativo de las personas como ventaja competitiva."
+    },
+    {
+        "clase": 1,
+        "termino": "Dirección de Recursos Humanos (DRH)",
+        "definicion": "Área estratégica encargada de alinear el capital humano con los objetivos y visión de largo plazo del negocio."
+    },
+    {
+        "clase": 1,
+        "termino": "Planeación de RH",
+        "definicion": "Proceso de anticipar y prevenir el movimiento de personas hacia el interior, dentro y fuera de la organización."
+    },
+    {
+        "clase": 1,
+        "termino": "Análisis de Puestos",
+        "definicion": "Procedimiento para determinar las responsabilidades y requisitos de un puesto y el tipo de persona que debe ocuparlo."
+    },
+    {
+        "clase": 1,
+        "termino": "Descripción de Puestos",
+        "definicion": "Documento que detalla las tareas, deberes y responsabilidades de un cargo específico."
+    },
+    {
+        "clase": 1,
+        "termino": "Reclutamiento",
+        "definicion": "Proceso de atraer e identificar candidatos potencialmente calificados para ocupar vacantes en la organización."
+    },
+    {
+        "clase": 1,
+        "termino": "Selección",
+        "definicion": "Proceso de elegir al candidato más adecuado para un puesto de entre los aspirantes reclutados."
+    },
+    {
+        "clase": 1,
+        "termino": "Contratación",
+        "definicion": "Formalización del vínculo laboral entre la empresa y el trabajador mediante acuerdos legales y administrativos."
+    },
+    {
+        "clase": 1,
+        "termino": "Inducción",
+        "definicion": "Proceso inicial de integración del nuevo empleado a la cultura, políticas y equipo de la organización."
+    },
+    {
+        "clase": 1,
+        "termino": "Capacitación",
+        "definicion": "Actividades diseñadas para mejorar los conocimientos y habilidades técnicas necesarias para el puesto actual."
+    },
+    {
+        "clase": 1,
+        "termino": "Desarrollo",
+        "definicion": "Preparación del colaborador para asumir mayores responsabilidades y roles futuros dentro de la empresa."
+    },
+    {
+        "clase": 1,
+        "termino": "Evaluación del Desempeño",
+        "definicion": "Sistema para medir y retroalimentar el cumplimiento de objetivos y competencias del trabajador."
+    },
+    {
+        "clase": 1,
+        "termino": "Remuneraciones",
+        "definicion": "Compensación económica que recibe el trabajador por su labor, incluyendo sueldos y salarios."
+    },
+    {
+        "clase": 1,
+        "termino": "Nómina",
+        "definicion": "Registro administrativo de los pagos, deducciones y obligaciones fiscales derivados de la relación laboral."
+    },
+    {
+        "clase": 1,
+        "termino": "Prestaciones y Beneficios",
+        "definicion": "Compensaciones no monetarias o adicionales al sueldo que buscan mejorar el bienestar del empleado."
+    },
+    {
+        "clase": 1,
+        "termino": "Seguridad e Higiene",
+        "definicion": "Normas y procedimientos orientados a prevenir accidentes y enfermedades en el entorno de trabajo."
+    },
+    {
+        "clase": 1,
+        "termino": "Relaciones Laborales",
+        "definicion": "Gestión del trato formal entre la empresa, los trabajadores y sus representaciones colectivas (sindicatos)."
+    },
+    {
+        "clase": 1,
+        "termino": "Comunicación Interna",
+        "definicion": "Proceso de intercambio de información entre los miembros de la organización para coordinar acciones."
+    },
+    {
+        "clase": 1,
+        "termino": "Cultura y Clima Organizacional",
+        "definicion": "Valores compartidos y percepción del ambiente de trabajo que influyen en el comportamiento del personal."
+    },
+    {
+        "clase": 2,
+        "termino": "Cultura Laboral",
+        "definicion": "Conjunto de supuestos, creencias y valores que los miembros de una organización comparten y transmiten."
+    },
+    {
+        "clase": 2,
+        "termino": "Sindicato",
+        "definicion": "Asociación de trabajadores constituida para el estudio, mejoramiento y defensa de sus intereses laborales."
+    },
+    {
+        "clase": 2,
+        "termino": "Productividad",
+        "definicion": "Relación entre los resultados obtenidos (valor generado) y los recursos utilizados (insumos)."
+    },
+    {
+        "clase": 2,
+        "termino": "Eficiencia",
+        "definicion": "Capacidad de hacer las cosas correctamente, optimizando el uso de los insumos."
+    },
+    {
+        "clase": 2,
+        "termino": "Eficacia",
+        "definicion": "Capacidad de lograr los objetivos y metas establecidos por la organización."
+    },
+    {
+        "clase": 2,
+        "termino": "Calidad",
+        "definicion": "Cumplimiento de los estándares y expectativas del cliente o de la organización."
+    },
+    {
+        "clase": 2,
+        "termino": "Derechos Humanos Laborales",
+        "definicion": "Principios universales que garantizan dignidad, igualdad y libertad al trabajador en su entorno profesional."
+    },
+    {
+        "clase": 2,
+        "termino": "Dirección de Personal",
+        "definicion": "Gestión técnica que asegura que las personas realicen sus tareas diarias conforme a lo planeado."
+    },
+    {
+        "clase": 3,
+        "termino": "Empleo",
+        "definicion": "Actividad laboral remunerada que genera bienes o servicios dentro del sistema económico."
+    },
+    {
+        "clase": 3,
+        "termino": "Desempleo Friccional",
+        "definicion": "Desempleo temporal de personas que están entre trabajos o buscando su primer empleo."
+    },
+    {
+        "clase": 3,
+        "termino": "Desempleo Estructural",
+        "definicion": "Desajuste entre las habilidades de los trabajadores y los requerimientos de las vacantes disponibles."
+    },
+    {
+        "clase": 3,
+        "termino": "Desempleo Cíclico",
+        "definicion": "Desempleo causado por las fases de recesión o caída en el ciclo económico de un país."
+    },
+    {
+        "clase": 3,
+        "termino": "Desempleo Tecnológico",
+        "definicion": "Sustitución de puestos de trabajo por automatización, maquinaria o nuevas tecnologías."
+    },
+    {
+        "clase": 3,
+        "termino": "Empleo Informal",
+        "definicion": "Trabajo que no cumple con las regulaciones legales, pago de impuestos ni acceso a seguridad social."
+    },
+    {
+        "clase": 3,
+        "termino": "Mercado Laboral Mexicano",
+        "definicion": "Entorno nacional de oferta y demanda de trabajo, marcado por una alta tasa de informalidad."
+    },
+    {
+        "clase": 3,
+        "termino": "Calidad de Vida",
+        "definicion": "Bienestar integral del trabajador considerando salud, seguridad, tiempo libre y satisfacción laboral."
+    },
+    {
+        "clase": 3,
+        "termino": "Globalización",
+        "definicion": "Integración económica mundial que fomenta la competencia y presiona la flexibilización de los mercados laborales."
+    },
+    {
+        "clase": 4,
+        "termino": "Las Tres D",
+        "definicion": "Conjunto de variables del factor humano: Diferencias individuales, Diversidad y Discriminación."
+    },
+    {
+        "clase": 4,
+        "termino": "Diferencias Individuales",
+        "definicion": "Atributos psicológicos y físicos únicos (personalidad, valores) que influyen en el comportamiento laboral."
+    },
+    {
+        "clase": 4,
+        "termino": "Diversidad",
+        "definicion": "Presencia de perfiles variados (género, edad, cultura) que aportan diferentes perspectivas al equipo."
+    },
+    {
+        "clase": 4,
+        "termino": "Discriminación",
+        "definicion": "Trato injusto o exclusión de personas por razones ajenas a su capacidad o desempeño profesional."
+    },
+    {
+        "clase": 4,
+        "termino": "Colaboración",
+        "definicion": "Trabajo conjunto y sinérgico entre personas para alcanzar metas organizacionales."
+    },
+    {
+        "clase": 4,
+        "termino": "Competencia",
+        "definicion": "Capacidad de aplicar conocimientos, destrezas y actitudes para resolver problemas específicos en el trabajo."
+    },
+    {
+        "clase": 4,
+        "termino": "Creatividad",
+        "definicion": "Capacidad de generar nuevas ideas o enfoques útiles para mejorar la competitividad empresarial."
+    },
+    {
+        "clase": 4,
+        "termino": "Conocimiento",
+        "definicion": "Información estratégica procesada y aplicada que genera valor y ventaja competitiva."
+    },
+    {
+        "clase": 4,
+        "termino": "Compromiso Afectivo",
+        "definicion": "Deseo emocional de permanecer en la empresa por identificación con sus valores y objetivos."
+    },
+    {
+        "clase": 4,
+        "termino": "Compromiso de Continuidad",
+        "definicion": "Necesidad de quedarse en la organización debido al alto costo económico o social de abandonarla."
+    },
+    {
+        "clase": 4,
+        "termino": "Compromiso Normativo",
+        "definicion": "Sentimiento de obligación moral o lealtad ética de permanecer dentro de la organización."
+    },
+    {
+        "clase": 5,
+        "termino": "Pensión",
+        "definicion": "Prestación económica periódica que recibe un trabajador tras cumplir ciertos requisitos de edad, tiempo de servicios o por incapacidad, otorgada por instituciones de seguridad social."
+    },
+    {
+        "clase": 5,
+        "termino": "Jubilación",
+        "definicion": "Acto administrativo mediante el cual un trabajador en activo pasa a una situación de retiro tras haber cumplido los años de servicio y edad estipulados por la ley."
+    },
+    {
+        "clase": 5,
+        "termino": "Diferencia entre Pensión y Jubilación",
+        "definicion": "La jubilación es el retiro por años de servicio; la pensión es el pago económico derivado de ese retiro, aunque también puede otorgarse por invalidez, viudez u orfandad."
+    },
+    {
+        "clase": 5,
+        "termino": "Seguridad Social en México",
+        "definicion": "Sistema que garantiza el derecho a la salud, asistencia médica, protección de medios de subsistencia y servicios sociales necesarios para el bienestar individual y colectivo."
+    },
+    {
+        "clase": 5,
+        "termino": "Ley del Seguro Social",
+        "definicion": "Marco normativo que rige la seguridad social en México, estableciendo los regímenes obligatorio y voluntario para proteger a los trabajadores y sus familias."
+    },
+    {
+        "clase": 5,
+        "termino": "Riesgos de Trabajo (Componente 1)",
+        "definicion": "Seguro que cubre accidentes y enfermedades a los que están expuestos los trabajadores en ejercicio o con motivo de su labor."
+    },
+    {
+        "clase": 5,
+        "termino": "Enfermedades y Maternidad (Componente 2)",
+        "definicion": "Componente que brinda atención médica, quirúrgica, farmacéutica y hospitalaria, además de subsidios económicos por incapacidad."
+    },
+    {
+        "clase": 5,
+        "termino": "Invalidez y Vida (Componente 3)",
+        "definicion": "Seguro que protege al trabajador contra riesgos que le impidan laborar de forma permanente o en caso de fallecimiento, protegiendo a sus beneficiarios."
+    },
+    {
+        "clase": 5,
+        "termino": "Retiro, Cesantía y Vejez (Componente 4)",
+        "definicion": "Seguro destinado a proporcionar una pensión a los trabajadores que hayan cumplido los años de cotización y edad requerida (60 años para cesantía, 65 para vejez)."
+    },
+    {
+        "clase": 5,
+        "termino": "Guarderías y Prestaciones Sociales (Componente 5)",
+        "definicion": "Servicio que proporciona cuidados infantiles para hijos de trabajadores y actividades de fomento a la salud, cultura y recreación."
+    },
+    {
+        "clase": 5,
+        "termino": "Identificación de Características Personales",
+        "definicion": "Proceso estratégico de evaluar rasgos de personalidad, valores y aptitudes para asegurar un ajuste óptimo entre el individuo y el puesto de trabajo."
+    },
+    {
+        "clase": 5,
+        "termino": "Personalidad",
+        "definicion": "Estructura dinámica de rasgos psicológicos que determinan la forma única en que un individuo piensa, siente y actúa en el entorno organizacional."
+    },
+    {
+        "clase": 5,
+        "termino": "Valores",
+        "definicion": "Principios o convicciones fundamentales que guían el juicio de una persona sobre lo que es importante, ético o deseable en su conducta profesional."
+    },
+    {
+        "clase": 5,
+        "termino": "Aptitudes",
+        "definicion": "Habilidades naturales o potencial de un individuo para aprender y ejecutar tareas específicas con eficacia y eficiencia."
+    },
+    {
+        "clase": 5,
+        "termino": "Cuestionario 16 PF",
+        "definicion": "Instrumento científico de Raymond Cattell que evalúa 16 rasgos primarios de la personalidad para predecir el desempeño y potencial de liderazgo."
+    },
+    {
+        "clase": 5,
+        "termino": "Ética en la Evaluación de Talento",
+        "definicion": "Normas de integridad que aseguran que el uso de pruebas psicométricas sea transparente, objetivo y libre de sesgos discriminatorios."
+    },
+    {
+        "clase": 6,
+        "termino": "Grupo de Trabajo",
+        "definicion": "Conjunto de dos o más individuos que interactúan y son independientes, reuniéndose para lograr objetivos específicos sin necesidad de sinergia positiva."
+    },
+    {
+        "clase": 6,
+        "termino": "Equipo de Trabajo",
+        "definicion": "Grupo cuyos esfuerzos individuales resultan en un desempeño mayor que la suma de sus aportaciones, gracias a la sinergia positiva y responsabilidad mutua."
+    },
+    {
+        "clase": 6,
+        "termino": "Sinergia",
+        "definicion": "Efecto mediante el cual el resultado del trabajo conjunto es superior a la suma de los resultados individuales; es positiva en equipos y neutral en grupos."
+    },
+    {
+        "clase": 6,
+        "termino": "Liderazgo",
+        "definicion": "Habilidad para influir en un grupo y dirigirlo con entusiasmo hacia el logro de un objetivo o un conjunto de metas compartidas."
+    },
+    {
+        "clase": 6,
+        "termino": "Motivación",
+        "definicion": "Procesos que inciden en la intensidad, dirección y persistencia del esfuerzo que realiza una persona para alcanzar un objetivo organizacional."
+    },
+    {
+        "clase": 6,
+        "termino": "Intensidad (Motivación)",
+        "definicion": "Elemento de la motivación que se refiere a cuánto esfuerzo e ímpetu invierte una persona en una tarea."
+    },
+    {
+        "clase": 6,
+        "termino": "Dirección (Motivación)",
+        "definicion": "Canalización del esfuerzo hacia metas que benefician a la organización, asegurando que la energía no se desperdicie."
+    },
+    {
+        "clase": 6,
+        "termino": "Persistencia (Motivación)",
+        "definicion": "Medida de cuánto tiempo una persona puede mantener su esfuerzo y compromiso antes de desistir."
+    },
+    {
+        "clase": 6,
+        "termino": "Comunicación Organizacional",
+        "definicion": "Proceso de transferencia y comprensión de significados entre los miembros de una organización, fundamental para el control y la motivación."
+    },
+    {
+        "clase": 6,
+        "termino": "Barreras de la Comunicación",
+        "definicion": "Obstáculos como el filtrado, la percepción selectiva y la sobrecarga de información que distorsionan el mensaje entre emisor y receptor."
+    },
+    {
+        "clase": 6,
+        "termino": "Sobrecarga de Información",
+        "definicion": "Condición en la que el flujo de datos excede la capacidad de procesamiento de un individuo, provocando que se ignore o pierda información clave."
+    },
+    {
+        "clase": 6,
+        "termino": "Plan de Vida y Carrera",
+        "definicion": "Proceso de planeación profesional y personal que permite tomar decisiones efectivas para alcanzar metas y dar sentido a la trayectoria laboral."
+    },
+    {
+        "clase": 6,
+        "termino": "Metas SMART",
+        "definicion": "Metodología para definir objetivos que sean Específicos, Medibles, Alcanzables, Relevantes y con un Tiempo determinado."
+    },
+    {
+        "clase": 6,
+        "termino": "Pertenencia vs Encajar",
+        "definicion": "Diferencia entre ser fiel a uno mismo dentro de un grupo (pertenecer) frente a modificar el comportamiento para cumplir expectativas ajenas (encajar)."
+    }
+]

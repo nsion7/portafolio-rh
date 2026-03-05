@@ -1,11 +1,242 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Ambience from '../components/Ambience.astro';
+import Hotel from '../components/Hotel.astro';
+import rawData from '../../public/conceptos.json';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Define the shape of our concepts loosely
+interface Concepto {
+  clase: number;
+  termino: string;
+  definicion: string;
+}
+
+// Ensure the data is correctly typed
+const data: Concepto[] = rawData;
+
+// Grouping logic by clase ID
+const groups = data.reduce((acc, current) => {
+  if (!acc[current.clase]) acc[current.clase] = [];
+  acc[current.clase].push(current);
+  return acc;
+}, {} as Record<number, Concepto[]>);
+
+// Configurations for the 6 buildings based on "clase" ID
+const configs = [
+  { id: 1, name: "Depto. Administración", primaryColor: "#4a4e69", secondaryColor: "#22223b" }, // Brutalist/Professional vibe
+  { id: 2, name: "Torre Cultura", primaryColor: "#3a5a40", secondaryColor: "#588157" },         // Green/Eco
+  { id: 3, name: "Economía Inn", primaryColor: "#1d3557", secondaryColor: "#457b9d" },          // Modern Glass/Blue
+  { id: 4, name: "Diversidad Loft", primaryColor: "#9b2226", secondaryColor: "#ae2012" },       // Industrial Red
+  { id: 5, name: "Seguridad Hospital", primaryColor: "#e9c46a", secondaryColor: "#d4a373" },    // Warm/Art Deco
+  { id: 6, name: "Sinergia Suites", primaryColor: "#2a9d8f", secondaryColor: "#264653" }        // Contemporary Teal
+];
 ---
+<Layout title="The Architectural Ledger">
+  <Ambience />
 
-<Layout>
-	<Welcome />
+  <main class="w-full h-screen flex flex-col relative z-10 bg-transparent overflow-hidden">
+    
+    <!-- Building Render Area -->
+    <div id="city-container" class="w-full flex-1 flex flex-col justify-end relative px-2">
+      {configs.map((conf, index) => (
+         <Hotel 
+           id={conf.id} 
+           name={conf.name} 
+           primaryColor={conf.primaryColor} 
+           secondaryColor={conf.secondaryColor} 
+           conceptos={groups[conf.id] || []}
+           isActive={index === 0} 
+         />
+      ))}
+    </div>
+
+    <!-- Retro RPG Dialogue Box (Absolute over the building) -->
+    <div id="dialogue-box" class="hidden absolute top-[15vh] sm:top-[20vh] left-1/2 -translate-x-1/2 w-[90%] sm:w-[70%] max-w-4xl bg-[#0a0a2a] border-[6px] sm:border-[8px] border-white text-white p-4 sm:p-6 md:p-8 z-40 shadow-[10px_10px_0_rgba(0,0,0,0.8)] font-['VT323']">
+      <h3 id="dialogue-title" class="font-['Press_Start_2P'] text-yellow-300 text-[10px] sm:text-[14px] md:text-lg mb-4 uppercase tracking-widest break-words leading-relaxed drop-shadow-[2px_2px_0_#000]"></h3>
+      <p id="dialogue-content" class="text-xl sm:text-2xl md:text-3xl leading-snug min-h-[4rem] sm:min-h-[5rem]"></p>
+      
+      <!-- Blinking cursor & Close Button -->
+      <div class="mt-4 flex justify-between items-end border-t-4 border-dashed border-gray-500 pt-2">
+         <span class="animate-ping text-xl sm:text-2xl">▼</span>
+         <button id="close-dialogue" class="text-[#f1c40f] hover:text-white font-['Press_Start_2P'] text-[10px] sm:text-xs">
+           [CLOSE]
+         </button>
+      </div>
+    </div>
+
+    <!-- Sleek City Map & Navigation -->
+    <nav class="w-full bg-[#151515] border-t-[6px] border-[#222] shadow-[0_-10px_20px_rgba(0,0,0,0.8)] z-[100] p-2 sm:p-4 pb-4 sm:pb-6 flex justify-center flex-wrap overflow-visible gap-4 sm:gap-6 items-end min-h-[90px] sm:min-h-[130px] shrink-0">
+      {configs.map((conf, idx) => (
+        <button 
+          class="nav-btn group flex flex-col justify-end items-center flex-shrink-0 relative transition-transform hover:-translate-y-2 active:scale-95 mx-2" 
+          data-target-id={conf.id}
+        >
+          <!-- Tooltip Sign -->
+          <div class="opacity-0 group-hover:opacity-100 transition-opacity absolute -top-10 sm:-top-14 bg-white text-black text-[8px] sm:text-[10px] font-['Press_Start_2P'] px-2 py-2 shadow-[3px_3px_0_#000] whitespace-nowrap z-[200] border-2 border-black pointer-events-none">
+            {conf.name}
+          </div>
+          
+          <!-- Mini Building Sprite -->
+          <div class={`mini-building w-12 h-16 sm:w-16 sm:h-20 border-4 sm:border-[6px] border-black relative transition-all ${idx === 0 ? 'ring-4 ring-yellow-400 translate-y-[-5px]' : ''}`} style={`background-color: ${conf.primaryColor};`}>
+            <div class="absolute inset-x-0 top-0 h-3 sm:h-4 border-b-2 sm:border-b-4 border-black" style={`background-color: ${conf.secondaryColor};`}></div>
+            <div class="grid grid-cols-2 gap-1 p-1 mt-3 sm:mt-4 opacity-70">
+               <div class="w-full aspect-square bg-gray-900 border border-gray-700"></div><div class="w-full aspect-square bg-gray-900 border border-gray-700"></div>
+               <div class="w-full aspect-square bg-gray-900 border border-gray-700"></div><div class="w-full aspect-square bg-gray-900 border border-gray-700"></div>
+            </div>
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 sm:w-6 h-4 sm:h-6 bg-black border-2 border-gray-800 border-b-0"></div>
+          </div>
+        </button>
+      ))}
+    </nav>
+
+    <!-- Copyright (Esquina inferior derecha) -->
+    <div class="fixed bottom-1 right-2 sm:bottom-2 sm:right-6 z-[200] pointer-events-none text-white/50 font-['VT323'] text-[10px] sm:text-[13px] tracking-wide drop-shadow-md">
+      Elaborado por Nancy Berenice Delgado Sion &copy; {new Date().getFullYear()} - Todos los derechos reservados.
+    </div>
+  </main>
+
+  <script>
+    const navBtns = document.querySelectorAll('.nav-btn');
+    const hotels = document.querySelectorAll('.hotel-building');
+    const dialogueBox = document.getElementById('dialogue-box') as HTMLElement;
+    const dialogueTitle = document.getElementById('dialogue-title') as HTMLElement;
+    const dialogueContent = document.getElementById('dialogue-content') as HTMLElement;
+    const closeDialogueBtn = document.getElementById('close-dialogue');
+    
+    // Switch Buildings
+    navBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target-id');
+        
+        // Hide all hotels
+        hotels.forEach(h => {
+          h.classList.remove('flex');
+          h.classList.add('hidden');
+        });
+        
+        // Show target hotel
+        const target = document.querySelector(`.hotel-building[data-hotel-id="${targetId}"]`);
+        if(target) {
+          target.classList.remove('hidden');
+          target.classList.add('flex');
+        }
+
+        // Close dialogue
+        dialogueBox.classList.add('hidden');
+        
+        // Update Nav UI
+        navBtns.forEach(b => {
+          const mini = b.querySelector('.mini-building') as HTMLElement;
+          if(mini) mini.classList.remove('ring-4', 'ring-yellow-400', 'translate-y-[-5px]');
+        });
+        const activeMini = btn.querySelector('.mini-building') as HTMLElement;
+        if(activeMini) activeMini.classList.add('ring-4', 'ring-yellow-400', 'translate-y-[-5px]');
+
+        // Close all windows
+        document.querySelectorAll('.window-container').forEach(w => {
+          w.classList.remove('window-open');
+        });
+      });
+    });
+
+    // Window RPG Logic
+    const windows = document.querySelectorAll('.window-container');
+    let typeWriterInterval: ReturnType<typeof setInterval> | null = null;
+
+    windows.forEach(win => {
+      win.addEventListener('click', (e) => {
+        const isCurrentlyOpen = win.classList.contains('window-open');
+        
+        // Close all other windows
+        windows.forEach(w => w.classList.remove('window-open'));
+        if(typeWriterInterval) clearInterval(typeWriterInterval);
+        
+        if (isCurrentlyOpen) {
+          // It was clicked again -> close it
+          dialogueBox?.classList.add('hidden');
+        } else {
+          // Open it
+          win.classList.add('window-open');
+          
+          const termino = win.getAttribute('data-termino') || '';
+          let definicion = win.getAttribute('data-definicion') || '';
+          
+          dialogueBox?.classList.remove('hidden');
+          if(dialogueTitle) dialogueTitle.textContent = termino;
+          if(dialogueContent) dialogueContent.innerHTML = '';
+          
+          // Fast Typewriter Effect
+          let i = 0;
+          typeWriterInterval = setInterval(() => {
+            if (i < definicion.length) {
+              dialogueContent.innerHTML += definicion.charAt(i);
+              i++;
+            } else {
+              if(typeWriterInterval) clearInterval(typeWriterInterval);
+            }
+          }, 15);
+        }
+      });
+    });
+
+    // Close Dialogue Button
+    closeDialogueBtn?.addEventListener('click', () => {
+      dialogueBox.classList.add('hidden');
+      if(typeWriterInterval) clearInterval(typeWriterInterval);
+      windows.forEach(w => w.classList.remove('window-open'));
+    });
+
+    // Bird and Bee Constant Flight Logic
+    const pixelBird = document.getElementById("pixel-bird");
+    const pixelBee = document.getElementById("pixel-bee");
+    
+    function moveBird() {
+        if (!pixelBird) return;
+        const activeHotel = document.querySelector(".hotel-building.flex");
+        if(!activeHotel) { setTimeout(moveBird, 1000); return; }
+        
+        const targets = activeHotel.querySelectorAll(".sign");
+        if (targets.length === 0) { setTimeout(moveBird, 1000); return; }
+        
+        const target = targets[Math.floor(Math.random() * targets.length)];
+        const rect = target.getBoundingClientRect();
+        
+        pixelBird.style.opacity = '1';
+        pixelBird.style.position = 'fixed';
+        pixelBird.style.zIndex = '200';
+        pixelBird.style.transition = 'all 2.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        pixelBird.style.left = `${rect.left + 15}px`;
+        pixelBird.style.top = `${rect.top - 25}px`;
+        pixelBird.style.transform = `scaleX(${Math.random() > 0.5 ? 1 : -1})`;
+        
+        setTimeout(moveBird, 4000 + Math.random() * 3000);
+    }
+
+    function moveBee() {
+        if (!pixelBee) return;
+        const activeHotel = document.querySelector(".hotel-building.flex");
+        if(!activeHotel) { setTimeout(moveBee, 1000); return; }
+        
+        const flowers = activeHotel.querySelectorAll(".window-plant");
+        if (flowers.length === 0) { setTimeout(moveBee, 1000); return; }
+        
+        const target = flowers[Math.floor(Math.random() * flowers.length)];
+        const rect = target.getBoundingClientRect();
+        
+        pixelBee.style.animation = 'none';
+        pixelBee.style.position = 'fixed';
+        pixelBee.style.zIndex = '200';
+        pixelBee.style.transition = 'all 2s ease-in-out';
+        pixelBee.style.left = `${rect.left - 5}px`;
+        pixelBee.style.top = `${rect.top - 20}px`;
+        
+        setTimeout(() => {
+            pixelBee.style.animation = 'float-bee 1.5s ease-in-out infinite alternate';
+            setTimeout(moveBee, 3000 + Math.random() * 3000);
+        }, 2000);
+    }
+
+    setTimeout(moveBird, 500);
+    setTimeout(moveBee, 1000);
+  </script>
 </Layout>

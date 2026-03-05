@@ -1,0 +1,137 @@
+[
+    {
+        "id": "hotel-estructura",
+        "name": "Hotel Estructura",
+        "style": "Brutalist",
+        "primaryColor": "#555555",
+        "secondaryColor": "#333333",
+        "windows": [
+            {
+                "id": "w1",
+                "concept": "Foundation",
+                "definition": "The lowest load-bearing part of a building, typically below ground level.",
+                "icon": "🏗️"
+            },
+            {
+                "id": "w2",
+                "concept": "Load-bearing walls",
+                "definition": "A wall that is an active structural element of a building, holding the weight of the elements above it.",
+                "icon": "🧱"
+            },
+            {
+                "id": "w3",
+                "concept": "Concrete Formwork",
+                "definition": "Temporary or permanent molds into which concrete is poured.",
+                "icon": "🏢"
+            },
+            {
+                "id": "w4",
+                "concept": "Rebar",
+                "definition": "Steel bar used as a tension device in reinforced concrete.",
+                "icon": "⛓️"
+            },
+            {
+                "id": "w5",
+                "concept": "Exposed Aggregate",
+                "definition": "Decorative architectural finish achieved by stripping away the surface layer of concrete.",
+                "icon": "🪨"
+            },
+            {
+                "id": "w6",
+                "concept": "Monolithic",
+                "definition": "Formed of a single large block of stone or concrete.",
+                "icon": "🗿"
+            }
+        ]
+    },
+    {
+        "id": "eco-resort",
+        "name": "Eco-Resort",
+        "style": "Sustainable",
+        "primaryColor": "#2d5a27",
+        "secondaryColor": "#8b5a2b",
+        "windows": [
+            {
+                "id": "w1",
+                "concept": "Passive cooling",
+                "definition": "Building design strategies that minimize heat gain and maximize heat loss.",
+                "icon": "🌬️"
+            },
+            {
+                "id": "w2",
+                "concept": "Thermal mass",
+                "definition": "The ability of a material to absorb and store heat energy.",
+                "icon": "🌡️"
+            },
+            {
+                "id": "w3",
+                "concept": "Green Roof",
+                "definition": "A roof that is partially or completely covered with vegetation.",
+                "icon": "🌱"
+            },
+            {
+                "id": "w4",
+                "concept": "Solar Gain",
+                "definition": "Increase in temperature in a space, object or structure that results from solar radiation.",
+                "icon": "☀️"
+            },
+            {
+                "id": "w5",
+                "concept": "Rainwater Harvesting",
+                "definition": "The collection and storage of rain, rather than allowing it to run off.",
+                "icon": "🌧️"
+            },
+            {
+                "id": "w6",
+                "concept": "Natural Ventilation",
+                "definition": "Process of supplying and removing air through an indoor space without mechanical systems.",
+                "icon": "🍃"
+            }
+        ]
+    },
+    {
+        "id": "skyline-tower",
+        "name": "Skyline Tower",
+        "style": "Modern",
+        "primaryColor": "#4b8eb3",
+        "secondaryColor": "#1a1a1a",
+        "windows": [
+            {
+                "id": "w1",
+                "concept": "Curtain walls",
+                "definition": "An outer covering of a building in which the outer walls are non-structural.",
+                "icon": "🪟"
+            },
+            {
+                "id": "w2",
+                "concept": "Cantilevers",
+                "definition": "A rigid structural element that extends horizontally and is supported at only one end.",
+                "icon": "🏗️"
+            },
+            {
+                "id": "w3",
+                "concept": "Spandrel Glass",
+                "definition": "Glass used in a curtain wall to conceal structural elements.",
+                "icon": "⬛"
+            },
+            {
+                "id": "w4",
+                "concept": "Mullions",
+                "definition": "Vertical or horizontal elements that form a division between units of a window.",
+                "icon": "⏸️"
+            },
+            {
+                "id": "w5",
+                "concept": "Steel Frame",
+                "definition": "A building technique with a 'skeleton frame' of vertical steel columns and horizontal I-beams.",
+                "icon": "🪚"
+            },
+            {
+                "id": "w6",
+                "concept": "Glass Facade",
+                "definition": "The principal front of a building that faces on to a street or open space, made of glass.",
+                "icon": "🏙️"
+            }
+        ]
+    }
+]

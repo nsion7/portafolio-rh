@@ -1,0 +1,136 @@
+---
+
+---
+
+<div
+    class="ambience absolute inset-0 pointer-events-none z-0 overflow-hidden"
+    id="ambience-layer"
+>
+    <!-- Celestial Body -->
+    <div
+        id="sun-moon"
+        class="absolute top-[8%] left-[10%] sm:top-[12%] sm:left-[15%] w-16 h-16 sm:w-28 sm:h-28 rounded-full transition-all duration-[1500ms] shadow-[0_0_30px_#ffeb3b] bg-yellow-400 border-4 border-yellow-200"
+    >
+    </div>
+
+    <!-- Stars -->
+    <div
+        id="stars"
+        class="absolute inset-0 opacity-0 transition-opacity duration-1000 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+PHBhdGggZD0iTTI1IDBjMS40IDEwIDExIDEwIDEyLjUgMjQuNS0xLjIgMTAuNS0xMSAxMC0xMi41IDI1LjUtMS40LTEwLTEwLTEwLTEyLjUtMjQuNUMxMyAxNS41IDIzLjYgMTUuNSAyNSAwWiIgZmlsbD0iI0ZGRlZFIiBmaWxsLW9wYWNpdHk9IjAuMSIgc2NhbGU9IjAuMDUiLz48L3N2Zz4=')] bg-[length:100px_100px]"
+    >
+    </div>
+
+    <!-- Pixel Art UFO -->
+    <div
+        class="ufo absolute drop-shadow-xl z-10 w-16 h-8 sm:w-24 sm:h-12 bg-no-repeat bg-contain"
+        style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 shape-rendering=%22crispEdges%22><rect x=%226%22 y=%222%22 width=%224%22 height=%222%22 fill=%22%2388ccff%22/><rect x=%225%22 y=%224%22 width=%226%22 height=%222%22 fill=%22%2388ccff%22/><rect x=%223%22 y=%226%22 width=%2210%22 height=%222%22 fill=%22%23c0c0c0%22/><rect x=%222%22 y=%228%22 width=%2212%22 height=%222%22 fill=%22%23808080%22/><rect x=%221%22 y=%2210%22 width=%2214%22 height=%222%22 fill=%22%23505050%22/><rect x=%222%22 y=%2210%22 width=%222%22 height=%222%22 fill=%22%23ffff00%22/><rect x=%227%22 y=%2210%22 width=%222%22 height=%222%22 fill=%22%2300ff00%22/><rect x=%2212%22 y=%2210%22 width=%222%22 height=%222%22 fill=%22%23ff0000%22/><rect x=%225%22 y=%2212%22 width=%226%22 height=%224%22 fill=%22%23ffff00%22 fill-opacity=%220.3%22/></svg>');"
+    >
+    </div>
+</div>
+
+<!-- Pixel Art Flying Bee (Moved outside z-0 layer so it floats above buildings) -->
+<div
+    id="pixel-bee"
+    class="bee absolute drop-shadow-sm z-[100] w-6 h-6 sm:w-8 sm:h-8 bg-no-repeat bg-contain pointer-events-none"
+    style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 shape-rendering=%22crispEdges%22><rect x=%226%22 y=%222%22 width=%224%22 height=%224%22 fill=%22%23ffffff%22 fill-opacity=%220.8%22/><rect x=%222%22 y=%224%22 width=%224%22 height=%224%22 fill=%22%23ffffff%22 fill-opacity=%220.8%22/><rect x=%222%22 y=%226%22 width=%2210%22 height=%226%22 fill=%22%23ffcc00%22/><rect x=%224%22 y=%226%22 width=%222%22 height=%226%22 fill=%22%23000000%22/><rect x=%228%22 y=%226%22 width=%222%22 height=%226%22 fill=%22%23000000%22/><rect x=%2210%22 y=%228%22 width=%222%22 height=%222%22 fill=%22%23000000%22/><rect x=%220%22 y=%228%22 width=%222%22 height=%222%22 fill=%22%23000000%22/></svg>');"
+>
+</div>
+
+<!-- Pixel Art Perching Bird (Moved outside z-0 layer) -->
+<div
+    id="pixel-bird"
+    class="absolute z-[100] transition-all duration-[2000ms] w-8 h-8 sm:w-10 sm:h-10 bg-no-repeat bg-contain opacity-0 scale-x-[-1] pointer-events-none"
+    style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 shape-rendering=%22crispEdges%22><rect x=%2212%22 y=%226%22 width=%222%22 height=%222%22 fill=%22%23ffcc00%22/><rect x=%224%22 y=%224%22 width=%228%22 height=%226%22 fill=%22%23ff4444%22/><rect x=%2210%22 y=%224%22 width=%222%22 height=%222%22 fill=%22%23ffffff%22/><rect x=%2211%22 y=%224%22 width=%221%22 height=%221%22 fill=%22%23000000%22/><rect x=%222%22 y=%226%22 width=%226%22 height=%224%22 fill=%22%23cc0000%22/><rect x=%220%22 y=%224%22 width=%224%22 height=%222%22 fill=%22%23cc0000%22/><rect x=%226%22 y=%2210%22 width=%222%22 height=%222%22 fill=%22%23ffcc00%22/><rect x=%228%22 y=%2210%22 width=%222%22 height=%222%22 fill=%22%23ffcc00%22/></svg>');"
+>
+</div>
+
+<!-- Theme Button (Extracted from background layer so it can be clicked over main) -->
+<div class="fixed top-2 sm:top-5 right-2 sm:right-5 pointer-events-auto z-50">
+    <button
+        id="theme-toggle"
+        class="pixel-btn bg-[#2a2a2a] text-[#f1c40f] px-3 sm:px-4 py-2 border-[4px] border-[#111] hover:bg-[#333] hover:text-white active:translate-y-1 font-['Press_Start_2P'] text-[8px] sm:text-[12px] shadow-[4px_4px_0_#000] cursor-pointer transition-colors"
+    >
+        🌙 NIGHT
+    </button>
+</div>
+
+<style>
+    .ufo {
+        animation: fly-ufo 35s linear infinite;
+        top: 15%;
+        left: -15%;
+    }
+    @keyframes fly-ufo {
+        0% {
+            transform: translate(0, 0) rotate(5deg);
+            opacity: 0;
+        }
+        5% {
+            opacity: 1;
+        }
+        50% {
+            transform: translate(70vw, -10vh) rotate(-10deg);
+        }
+        95% {
+            opacity: 1;
+        }
+        100% {
+            transform: translate(120vw, 20vh) rotate(5deg);
+            opacity: 0;
+        }
+    }
+
+    .bee {
+        animation: float-bee 12s ease-in-out infinite alternate;
+        top: 35%;
+        left: 80%;
+    }
+    @keyframes float-bee {
+        0% {
+            transform: translateY(0) translateX(0) rotate(0deg);
+        }
+        33% {
+            transform: translateY(-30px) translateX(-40px) rotate(-10deg);
+        }
+        66% {
+            transform: translateY(20px) translateX(-20px) rotate(15deg);
+        }
+        100% {
+            transform: translateY(-10px) translateX(-80px) rotate(-5deg);
+        }
+    }
+</style>
+
+<script is:inline>
+    // Theme Toggle Logic
+    let isNight = false;
+    const toggleBtn = document.getElementById("theme-toggle");
+    const sunMoon = document.getElementById("sun-moon");
+    const starsLayer = document.getElementById("stars");
+    const html = document.documentElement;
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+            isNight = !isNight;
+            if (isNight) {
+                html.setAttribute("data-theme", "night");
+                toggleBtn.innerHTML = "☀️ DAY";
+                toggleBtn.classList.replace("text-[#f1c40f]", "text-[#87CEEB]");
+                if (sunMoon) {
+                    sunMoon.className =
+                        "absolute top-[8%] left-[10%] sm:top-[12%] sm:left-[15%] w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-[#f4f6f0] border-[6px] border-[#d0d5ce] transition-all duration-[1500ms] shadow-[inset_-6px_-6px_0_0_#d0d5ce,0_0_50px_rgba(255,255,255,0.8)]";
+                }
+                if (starsLayer) starsLayer.style.opacity = "1";
+            } else {
+                html.setAttribute("data-theme", "day");
+                toggleBtn.innerHTML = "🌙 NIGHT";
+                toggleBtn.classList.replace("text-[#87CEEB]", "text-[#f1c40f]");
+                if (sunMoon) {
+                    sunMoon.className =
+                        "absolute top-[8%] left-[10%] sm:top-[12%] sm:left-[15%] w-16 h-16 sm:w-28 sm:h-28 rounded-full bg-yellow-400 border-4 border-yellow-200 transition-all duration-[1500ms] shadow-[0_0_30px_#ffeb3b]";
+                }
+                if (starsLayer) starsLayer.style.opacity = "0";
+            }
+        });
+    }
+</script>

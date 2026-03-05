@@ -1,0 +1,149 @@
+---
+import Window from "./Window.astro";
+
+export interface Props {
+    id: number;
+    name: string;
+    primaryColor: string;
+    secondaryColor: string;
+    conceptos: Array<{ termino: string; definicion: string }>;
+    isActive: boolean;
+}
+
+const { id, name, primaryColor, secondaryColor, conceptos, isActive } =
+    Astro.props;
+
+const bushColors = [
+    ["#2E8B57", "#228B22", "#006400"], // Hotel 1
+    ["#8FBC8F", "#3CB371", "#2E8B57"], // Hotel 2
+    ["#556B2F", "#6B8E23", "#808000"], // Hotel 3
+    ["#CD5C5C", "#A52A2A", "#8B0000"], // Hotel 4 (Reddish)
+    ["#DAA520", "#B8860B", "#8B6508"], // Hotel 5 (Yellowish)
+    ["#4682B4", "#5F9EA0", "#008080"], // Hotel 6 (Teal/Blueish)
+];
+const colors = bushColors[(id - 1) % 6];
+const b1 = encodeURIComponent(colors[0]);
+const b2 = encodeURIComponent(colors[1]);
+const b3 = encodeURIComponent(colors[2]);
+
+// Custom Facades for each Hotel ID
+const hotelFacades = [
+    // 1: Depto Administración - Rigid Bridgerton Columns & Pediment Base
+    `<div class="absolute inset-x-0 bottom-0 top-[20px] sm:top-[30px] z-0 flex justify-evenly pointer-events-none opacity-[0.35] mix-blend-overlay">
+        <div class="w-6 sm:w-10 h-full bg-white border-x-[3px] border-black/50 shadow-[4px_0_0_rgba(0,0,0,0.4)]" style="background-image: repeating-linear-gradient(90deg, transparent, transparent 6px, rgba(0,0,0,0.15) 6px, rgba(0,0,0,0.15) 8px)"></div>
+        <div class="w-6 sm:w-10 h-full bg-white border-x-[3px] border-black/50 shadow-[4px_0_0_rgba(0,0,0,0.4)]" style="background-image: repeating-linear-gradient(90deg, transparent, transparent 6px, rgba(0,0,0,0.15) 6px, rgba(0,0,0,0.15) 8px)"></div>
+        <div class="w-6 sm:w-10 h-full bg-white border-x-[3px] border-black/50 shadow-[4px_0_0_rgba(0,0,0,0.4)]" style="background-image: repeating-linear-gradient(90deg, transparent, transparent 6px, rgba(0,0,0,0.15) 6px, rgba(0,0,0,0.15) 8px)"></div>
+        <div class="w-6 sm:w-10 h-full bg-white border-x-[3px] border-black/50 shadow-[4px_0_0_rgba(0,0,0,0.4)]" style="background-image: repeating-linear-gradient(90deg, transparent, transparent 6px, rgba(0,0,0,0.15) 6px, rgba(0,0,0,0.15) 8px)"></div>
+    </div>
+    <div class="absolute top-0 inset-x-0 h-4 sm:h-6 bg-white border-b-[4px] border-black z-20 flex px-4 opacity-50 mix-blend-overlay" style="background-image: repeating-linear-gradient(90deg, transparent, transparent 15px, rgba(0,0,0,0.8) 15px, rgba(0,0,0,0.8) 20px);"></div>`,
+
+    // 2: Torre Cultura - Eco/Nature Overgrown Ivy
+    `<div class="absolute inset-y-0 left-0 w-8 sm:w-14 z-0 pointer-events-none opacity-[0.85] mix-blend-normal" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 shape-rendering=%22crispEdges%22><rect x=%220%22 y=%220%22 width=%224%22 height=%2216%22 fill=%22%232b5329%22/><rect x=%224%22 y=%222%22 width=%226%22 height=%224%22 fill=%22%233f813a%22/><rect x=%222%22 y=%228%22 width=%228%22 height=%226%22 fill=%22%234dbb45%22/><rect x=%226%22 y=%2210%22 width=%226%22 height=%224%22 fill=%22%233f813a%22/></svg>'); background-size: cover; background-repeat: repeat-y;"></div>
+     <div class="absolute inset-y-0 right-0 w-8 sm:w-14 z-0 pointer-events-none opacity-[0.85] mix-blend-normal scale-x-[-1]" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 shape-rendering=%22crispEdges%22><rect x=%220%22 y=%220%22 width=%224%22 height=%2216%22 fill=%22%232b5329%22/><rect x=%224%22 y=%222%22 width=%226%22 height=%224%22 fill=%22%233f813a%22/><rect x=%222%22 y=%228%22 width=%228%22 height=%226%22 fill=%22%234dbb45%22/><rect x=%226%22 y=%2210%22 width=%226%22 height=%224%22 fill=%22%233f813a%22/></svg>'); background-size: cover; background-repeat: repeat-y;"></div>`,
+
+    // 3: Economía Inn - Modern Geometric Art Deco Lines
+    `<div class="absolute inset-0 z-0 pointer-events-none opacity-[0.4] mix-blend-screen" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 30px, #ffffff 30px, #ffffff 32px, transparent 32px, transparent 60px), repeating-linear-gradient(-45deg, transparent, transparent 30px, #ffffff 30px, #ffffff 32px, transparent 32px, transparent 60px);"></div>
+     <div class="absolute top-[20px] inset-x-0 h-[2px] bg-[#ffd700] z-20 opacity-70 border-b-2 border-black"></div>
+     <div class="absolute top-[30px] inset-x-0 h-[4px] bg-[#ffd700] z-20 opacity-70 border-b-2 border-black"></div>`,
+
+    // 4: Diversidad Loft - Industrial Brick Accents and Dark Iron
+    `<div class="absolute inset-x-0 top-[20px] bottom-0 z-0 pointer-events-none opacity-[0.3] mix-blend-multiply" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 18px, #000 18px, #000 20px), repeating-linear-gradient(90deg, transparent, transparent 28px, #000 28px, #000 30px); background-size: 30px 20px;"></div>
+     <div class="absolute inset-y-0 left-0 w-4 sm:w-6 bg-black z-20 border-r-4 border-gray-600 opacity-60"></div>
+     <div class="absolute inset-y-0 right-0 w-4 sm:w-6 bg-black z-20 border-l-4 border-gray-600 opacity-60"></div>`,
+
+    // 5: Seguridad Hospital - Warm Tudor Wood Timbers
+    `<div class="absolute inset-x-0 top-[20px] bottom-0 z-0 pointer-events-none opacity-[0.6] mix-blend-overlay flex justify-around">
+        <div class="w-8 h-full bg-[#3e2723] border-x-[3px] border-[#1b100e]"></div>
+        <div class="absolute top-1/4 inset-x-0 h-6 bg-[#3e2723] border-y-[3px] border-[#1b100e]"></div>
+        <div class="w-8 h-full bg-[#3e2723] border-x-[3px] border-[#1b100e]"></div>
+        <div class="absolute top-2/4 inset-x-0 h-6 bg-[#3e2723] border-y-[3px] border-[#1b100e]"></div>
+        <div class="w-8 h-full bg-[#3e2723] border-x-[3px] border-[#1b100e]"></div>
+    </div>`,
+
+    // 6: Sinergia Suites - Wrought Iron Balconies and Ornate Teal
+    `<div class="absolute inset-x-0 bottom-0 top-[20px] z-0 pointer-events-none opacity-[0.5] flex flex-col justify-evenly mix-blend-color-burn">
+        <div class="w-full h-8 bg-black/40 border-y-4 border-black border-dashed"></div>
+        <div class="w-full h-8 bg-black/40 border-y-4 border-black border-dashed"></div>
+        <div class="w-full h-8 bg-black/40 border-y-4 border-black border-dashed"></div>
+    </div>
+    <div class="absolute left-10 right-10 top-0 h-6 bg-teal-900 border-b-4 border-black z-20 opacity-80 rounded-b-full"></div>`,
+];
+
+const currentFacade = hotelFacades[(id - 1) % 6];
+---
+
+<div
+    class={`hotel-building ${isActive ? "flex" : "hidden"} flex-col items-center border-[8px] sm:border-[12px] border-black shadow-[15px_15px_0_0_rgba(0,0,0,0.6)] relative transition-opacity duration-300 w-[95%] sm:w-[85%] max-w-5xl mx-auto h-[75vh] sm:h-[80vh] rounded-t-lg select-none`}
+    data-hotel-id={id}
+    style={`background-color: ${primaryColor};`}
+>
+    <!-- Hotel Sign Overhang -->
+    <div
+        class="absolute -top-[20px] sm:-top-[30px] w-[90%] sm:w-4/5 text-center py-2 sm:py-3 border-[6px] border-black z-30 shadow-[5px_5px_0_0_rgba(0,0,0,0.8)] flex justify-center items-center"
+        style={`background-color: ${secondaryColor};`}
+    >
+        <h2
+            class="text-white font-['Press_Start_2P'] text-[10px] sm:text-[14px] md:text-lg drop-shadow-[2px_2px_0_#000] uppercase tracking-widest"
+        >
+            {name}
+        </h2>
+    </div>
+
+    <!-- Building Texture Pattern -->
+    <div
+        class="absolute inset-0 z-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjRkZGIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHJlY3QgeD0iMCIgeT0iMiIgd2lkdGg9IjIiIGhlaWdodD0iMiIgZmlsbD0iI0ZGRiIvPjwvc3ZnPg==')] opacity-10 pointer-events-none"
+    >
+    </div>
+
+    <!-- Dynamic Bridgerton/Classical Style Facades per Hotel -->
+    <Fragment set:html={currentFacade} />
+
+    <!-- Windows Grid Area with inner scroll -->
+    <div
+        class="flex-1 w-full px-2 sm:px-6 pt-16 sm:pt-20 pb-10 overflow-y-auto overflow-x-hidden relative z-10 custom-scroll flex flex-col items-center"
+    >
+        <!-- Windows Area (Built from bottom to top) -->
+        <div
+            class="flex flex-wrap-reverse justify-center gap-x-6 gap-y-12 sm:gap-x-10 sm:gap-y-16 w-full mt-auto mb-12 sm:mb-16 max-w-[95%]"
+        >
+            {
+                conceptos.map((c) => (
+                    <div class="w-[90px] sm:w-[120px] flex justify-center">
+                        <Window termino={c.termino} definicion={c.definicion} />
+                    </div>
+                ))
+            }
+        </div>
+
+        <!-- Entrance Door (Lobby) scrolls naturally at the bottom -->
+        <div
+            class="w-48 sm:w-64 h-32 sm:h-40 bg-[#1a1c29] border-[6px] border-black flex justify-center shadow-[inset_0_15px_30px_rgba(0,0,0,0.8)] relative z-20 mt-auto flex-shrink-0 mx-auto"
+        >
+            <!-- Pixel Art Bushes (Left and Right) -->
+            <div
+                class="absolute bottom-1 -left-[4.5rem] sm:-left-[6rem] w-16 h-16 sm:w-20 sm:h-20 bg-no-repeat bg-bottom z-10 drop-shadow-lg"
+                style={`background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 shape-rendering=%22crispEdges%22><rect x=%224%22 y=%222%22 width=%228%22 height=%2214%22 fill=%22${b1}%22/><rect x=%222%22 y=%226%22 width=%2212%22 height=%2210%22 fill=%22${b2}%22/><rect x=%220%22 y=%2210%22 width=%2216%22 height=%226%22 fill=%22${b3}%22/></svg>');`}
+            >
+            </div>
+            <div
+                class="absolute bottom-1 -right-[4.5rem] sm:-right-[6rem] w-16 h-16 sm:w-20 sm:h-20 bg-no-repeat bg-bottom z-10 drop-shadow-lg scale-x-[-1]"
+                style={`background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 shape-rendering=%22crispEdges%22><rect x=%224%22 y=%222%22 width=%228%22 height=%2214%22 fill=%22${b1}%22/><rect x=%222%22 y=%226%22 width=%2212%22 height=%2210%22 fill=%22${b2}%22/><rect x=%220%22 y=%2210%22 width=%2216%22 height=%226%22 fill=%22${b3}%22/></svg>');`}
+            >
+            </div>
+
+            <div
+                class="w-1/2 h-full border-r-[4px] border-[#292c3a] shadow-[2px_0_0_#111]"
+            >
+            </div>
+            <div
+                class="absolute -top-6 sm:-top-8 text-[#f1c40f] font-['VT323'] text-xl sm:text-4xl tracking-[0.3em] bg-black px-4 py-0 border-[3px] border-[#f1c40f] shadow-[3px_3px_0_#000]"
+            >
+                LOBBY
+            </div>
+            <div
+                class="absolute -bottom-4 sm:-bottom-6 w-[110%] h-4 sm:h-6 bg-[#333] border-4 border-black"
+            >
+            </div>
+        </div>
+    </div>
+</div>
