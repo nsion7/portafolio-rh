@@ -8,6 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://nsion7.github.io',
   base: '/portafolio-rh',
+  output: 'static',
   integrations: [react()],
 
   vite: {
